@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace TrinusApi.Models
 {
@@ -13,6 +15,8 @@ namespace TrinusApi.Models
         [Required(ErrorMessage = "Cpf é Obrigatorio")]
         public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
+        [JsonIgnore]
+        public virtual List<Operacao> Operacoes { get; set; }
        
 
     }

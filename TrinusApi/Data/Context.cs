@@ -8,6 +8,7 @@ namespace TrinusApi.Data
         public Context(DbContextOptions<Context> opt) : base(opt)
         {
 
+
         }
 
         public DbSet<Cotista> Cotistas { get; set; }
@@ -15,7 +16,10 @@ namespace TrinusApi.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            
+            builder.Entity<Operacao>()
+                .HasOne(operacao => operacao.Cotista)
+                .WithMany(cotista => cotista.Operacoes)
+                .HasForeignKey(operacao => operacao.CotistaId);
         }
     }
 }
