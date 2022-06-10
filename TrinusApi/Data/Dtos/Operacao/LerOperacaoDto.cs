@@ -10,6 +10,7 @@ namespace TrinusApi.Data.Dtos.Operacao
         [Range(0, 1, ErrorMessage = "Os Tipos de Operação aceitos são: 0 compra e 1 venda.")]
         public int TipoOperacao { get; set; }
         public int Cotas { get; set; }
-        public double ValorCota { get; set; }
+        public string ValorCota { get; set; }
+        
     }
 }

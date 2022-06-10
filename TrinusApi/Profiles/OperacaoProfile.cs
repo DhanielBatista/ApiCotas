@@ -12,6 +12,7 @@ namespace TrinusApi.Profiles
             CreateMap<CriarOperacaoDto, Operacao>();
             CreateMap<Operacao, LerOperacaoDto>();
             CreateMap<AtualizarOperacaoDto, Operacao>();
+                
 
         }
            
