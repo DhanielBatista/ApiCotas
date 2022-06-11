@@ -14,6 +14,5 @@ namespace TrinusApi.Models
         public double Cotas { get; set; }
         public double ValorCota { get; set; } = double.Parse((120 + Math.Log2(DateTime.Now.Minute) - Math.Log(3) + 1).ToString("F2"));
        
-        
     }
 }

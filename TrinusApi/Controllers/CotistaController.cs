@@ -34,8 +34,6 @@ namespace TrinusApi.Controllers
         public IActionResult BuscarCotista()
         {
             List<Cotista> cotistas = _context.Cotistas.ToList();
-         
-            
             List<LerCotistaDto> lerCotistaDtos = _mapper.Map<List<LerCotistaDto>>(cotistas);
             return Ok(lerCotistaDtos);
         }
@@ -54,7 +52,7 @@ namespace TrinusApi.Controllers
         public IActionResult AtualizaCotista(int id, [FromBody] AtualizarCotistaDto cotistaDto)
         {
             Cotista cotista = _context.Cotistas.FirstOrDefault(cotista => cotista.Id == id);
-            if(cotista != null)
+            if(cotista == null)
             {
                 return NotFound();
             }

@@ -15,10 +15,10 @@ namespace TrinusApi.Models
         [Required(ErrorMessage = "Cpf é Obrigatorio")]
         public string Cpf { get; set; }
         [Required(ErrorMessage = "Data de nascimento é Obrigatorio")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; } 
         [JsonIgnore]
         public virtual List<Operacao> Operacoes { get; set; }
-       
 
+        
     }
 }

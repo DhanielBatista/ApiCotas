@@ -26,9 +26,14 @@ namespace TrinusApi.Controllers
         public IActionResult AdicionaOperacao([FromBody] CriarOperacaoDto operacaoDto)
         {
             Operacao operacao = _mapper.Map<Operacao>(operacaoDto);
-            _context.Operacoes.Add(operacao);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(BuscarOperacoesPorId), new { Id = operacao.Id }, operacao);
+            if(operacao != null )
+            {
+                _context.Operacoes.Add(operacao);
+                _context.SaveChanges();
+                return CreatedAtAction(nameof(BuscarOperacoesPorId), new { Id = operacao.Id }, operacao);
+                
+            }
+            return NotFound();
         }
 
         [HttpGet]
@@ -60,7 +65,7 @@ namespace TrinusApi.Controllers
             }
             _mapper.Map(operacaoDto, operacao);
             _context.SaveChanges();
-            return Ok("Deu bom cla");
+            return Ok();
         }
         [HttpDelete]
         public IActionResult DeletaOperacao(int id)
