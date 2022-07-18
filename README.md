@@ -1,5 +1,5 @@
-# ApiTrinus
-Api construída para o processo seletivo empresa Trinus
+# Api
+Api construída para o processo seletivo 
 
 ## Pre-requisitos
 
