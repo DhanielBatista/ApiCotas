@@ -1,6 +1,3 @@
-# Api
-Api construída para o processo seletivo 
-
 ## Pre-requisitos
 
 <br>
